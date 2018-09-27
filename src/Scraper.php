@@ -17,10 +17,13 @@ class Scraper extends AbstractScraper implements ScraperInterface
     /**
      * Returns the contents of an article.
      *
+     * @param  string $link
      * @return \Pilipinews\Common\Article
      */
-    public function scrape()
+    public function scrape($link)
     {
+        $this->prepare(mb_strtolower($link));
+
         $title = (string) $this->title('h1');
 
         $body = $this->body('.page-content');
