@@ -28,6 +28,11 @@ class Scraper extends AbstractScraper implements ScraperInterface
 
         $body = $this->body('.page-content');
 
+        if ($link === 'http://www.pna.gov.ph/articles/1047565')
+        {
+            file_put_contents('test.txt', $body->html());
+        }
+
         return new Article($title, $this->html($body));
     }
 }
