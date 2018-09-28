@@ -13,11 +13,6 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
     /**
      * @var string
      */
-    protected $articles = __DIR__ . '/Articles';
-
-    /**
-     * @var string
-     */
     protected $link = 'http://www.pna.gov.ph/articles/';
 
     /**
@@ -44,16 +39,16 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
     {
         list($items, $regex) = array(array(), "/[\r\n]+/");
 
-        $files = glob((string) $this->articles . '/*.txt');
+        $files = (array) glob(__DIR__ . '/Articles/*.txt');
 
         foreach ((array) $files as $file) {
-            $text = file_get_contents((string) $file);
-
             $url = $this->link((string) $file);
+
+            $text = file_get_contents($file);
 
             $expected = preg_replace($regex, "\n", $text);
 
-            $items[] = array($expected, (string) $url);
+            $items[] = array($expected, $url);
         }
 
         return (array) $items;
