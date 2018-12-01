@@ -2,15 +2,16 @@
 
 namespace Pilipinews\Website\Pna;
 
-use Pilipinews\Common\Scraper as AbstractScraper;
 use Pilipinews\Common\Article;
+use Pilipinews\Common\Crawler as DomCrawler;
 use Pilipinews\Common\Interfaces\ScraperInterface;
+use Pilipinews\Common\Scraper as AbstractScraper;
 
 /**
  * Philippine News Agency Scraper
  *
  * @package Pilipinews
- * @author  Rougin Royce Gutib <rougingutib@gmail.com>
+ * @author  Rougin Gutib <rougingutib@gmail.com>
  */
 class Scraper extends AbstractScraper implements ScraperInterface
 {
@@ -28,6 +29,31 @@ class Scraper extends AbstractScraper implements ScraperInterface
 
         $body = $this->body('.page-content');
 
+        $body = $this->image($body);
+
         return new Article($title, $this->html($body));
+    }
+
+    /**
+     * Converts image elements to readable string.
+     *
+     * @param  \Pilipinews\Common\Crawler $crawler
+     * @return \Pilipinews\Common\Crawler
+     */
+    protected function image(DomCrawler $crawler)
+    {
+        $callback = function (DomCrawler $crawler) {
+            $result = $crawler->filter('img')->first();
+
+            $image = (string) $result->attr('src');
+
+            $text = $crawler->filter('p')->first();
+
+            $message = $image . ' - ' . $text->html();
+
+            return '<p>PHOTO: ' . $message . '</p>';
+        };
+
+        return $this->replace($crawler, 'figure.image', $callback);
     }
 }
