@@ -42,7 +42,8 @@ class Scraper extends AbstractScraper implements ScraperInterface
      */
     protected function image(DomCrawler $crawler)
     {
-        $callback = function (DomCrawler $crawler) {
+        $callback = function (DomCrawler $crawler)
+        {
             $result = $crawler->filter('img')->first();
 
             $image = (string) $result->attr('src');

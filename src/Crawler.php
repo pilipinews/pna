@@ -31,11 +31,13 @@ class Crawler implements CrawlerInterface
     {
         list($articles, $result) = array(array(), array());
 
-        foreach ($this->categories as $category) {
+        foreach ($this->categories as $category)
+        {
             $result[] = $this->items($category);
         }
 
-        foreach ($result[0] as $key => $item) {
+        foreach ($result[0] as $key => $item)
+        {
             $articles[] = $result[0][$key];
             $articles[] = $result[1][$key];
         }
@@ -54,7 +56,8 @@ class Crawler implements CrawlerInterface
 
         $base = 'http://www.pna.gov.ph';
 
-        $callback = function (DomCrawler $node) use ($base) {
+        $callback = function (DomCrawler $node) use ($base)
+        {
             $link = $node->filter('.media-heading > a');
 
             return $base . (string) $link->attr('href');

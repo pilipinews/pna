@@ -9,19 +9,19 @@
 
 Crawler and scraper for [Philippine News Agency](http://www.pna.gov.ph/) website.
 
-## Install
+## Installation
 
-Install Philippine News Agency via [Composer](https://getcomposer.org):
+Install `Philippine News Agency` via [Composer](https://getcomposer.org/):
 
 ``` bash
 $ composer require pilipinews/pna
 ```
 
-## Usage
+## Basic Usage
 
 Coming soon.
 
-## Change Log
+## Changelog
 
 Please see [CHANGELOG][link-changelog] for more information what has changed recently.
 
@@ -39,12 +39,12 @@ $ composer test
 
 The MIT License (MIT). Please see [LICENSE][link-license] for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/pilipinews/pna.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/pilipinews/pna/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/pilipinews/pna.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/pilipinews/pna.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/pilipinews/pna.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/pilipinews/pna.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/pilipinews/pna/master.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/pilipinews/pna.svg?style=flat-square
 
 [link-changelog]: https://github.com/pilipinews/pna/blob/master/CHANGELOG.md
 [link-code-quality]: https://scrutinizer-ci.com/g/pilipinews/pna
