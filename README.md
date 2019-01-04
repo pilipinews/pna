@@ -7,8 +7,6 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Crawler and scraper for [Philippine News Agency](http://www.pna.gov.ph/) website.
-
 ## Installation
 
 Install `Philippine News Agency` via [Composer](https://getcomposer.org/):
@@ -16,10 +14,6 @@ Install `Philippine News Agency` via [Composer](https://getcomposer.org/):
 ``` bash
 $ composer require pilipinews/pna
 ```
-
-## Basic Usage
-
-Coming soon.
 
 ## Changelog
 
