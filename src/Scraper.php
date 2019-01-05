@@ -50,9 +50,9 @@ class Scraper extends AbstractScraper implements ScraperInterface
 
             $image = (string) $result->attr('src');
 
-            $text = $crawler->filter('p')->first();
+            $text = $crawler->filter('figcaption')->first();
 
-            $message = $image . ' - ' . $text->html();
+            $message = $image . ' - ' . $text->text();
 
             return '<p>PHOTO: ' . $message . '</p>';
         };
