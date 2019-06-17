@@ -18,8 +18,8 @@ class Crawler implements CrawlerInterface
      * @var string[]
      */
     protected $categories = array(
-        'http://www.pna.gov.ph/categories/national',
-        'http://www.pna.gov.ph/categories/provincial',
+        'https://www.pna.gov.ph/categories/national',
+        'https://www.pna.gov.ph/categories/provincial',
     );
 
     /**
@@ -54,7 +54,7 @@ class Crawler implements CrawlerInterface
     {
         $pattern = '.articles > .article.media';
 
-        $base = 'http://www.pna.gov.ph';
+        $base = 'https://www.pna.gov.ph';
 
         $callback = function (DomCrawler $node) use ($base)
         {
